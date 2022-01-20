@@ -3,7 +3,7 @@
 int[,] CreateArray (int m,int n)
 {
     int[,] matrix = new int[m,n];
-    for (int i = 0; i < m; i=i++)
+    for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
         {
@@ -13,17 +13,17 @@ int[,] CreateArray (int m,int n)
     return matrix;
 }
 
-// int[,] NewArray (int[,] matrix)
-// {
-//     for (int i = 0; i < matrix.GetLength(0); i=i+2)
-//     {
-//         for (int j = 0; j < matrix.GetLength(1); j=j+2)
-//         {
-//             matrix[i, j] = matrix[i, j]*matrix[i, j];
-//         }
-//     }
-//     return matrix;
-// }
+int[,] NewArray (int[,] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i=i+2)
+    {
+        for (int j = 0; j < matrix.GetLength(1); j=j+2)
+        {
+            matrix[i, j] = matrix[i, j]*matrix[i, j];
+        }
+    }
+    return matrix;
+}
 void PrintMatrix (int[,]matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -37,12 +37,12 @@ void PrintMatrix (int[,]matrix)
 }
 
 var rand = new Random();
-int row = rand.Next(1,6);
-int column = rand.Next(1,6);
+int row = rand.Next(1,10);
+int column = rand.Next(1,10);
 Console.WriteLine ($"{row}, {column}");
 int [,] Matrix = CreateArray(row,column);
 Console.WriteLine("Исходный массив:");
 PrintMatrix (Matrix);
-Console.WriteLine();
-// int [,] Matrix1 = NewArray (Matrix);
-// PrintMatrix (Matrix1);
+Console.WriteLine("Новый массив:");
+int [,] Matrix1 = NewArray (Matrix);
+PrintMatrix (Matrix1);
