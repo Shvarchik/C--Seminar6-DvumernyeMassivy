@@ -18,7 +18,7 @@ void PrintMatrix (int[,]matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write ($"{matrix[i,j],4}");
+            Console.Write ($"{matrix[i,j],5}");
         }
         Console.WriteLine();
     }
@@ -26,11 +26,11 @@ void PrintMatrix (int[,]matrix)
 void PrintArray (double [] array)
 {
     for (int i=0;i<array.Length;i++)
-        Console.Write ($"{array[i],7:N3}");
+        Console.Write ($"{array[i],5:N2}");
 }
 var rand = new Random();
-int row = rand.Next(1,6);
-int column = rand.Next(1,6);
+int row = rand.Next(1,10);
+int column = rand.Next(1,10);
 Console.WriteLine ($"{row}, {column}");
 int [,] Matrix = CreateArray(row,column);
 Console.WriteLine("Исходный массив:");
